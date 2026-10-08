@@ -1,0 +1,214 @@
+/* blinken.app — gli stessi colori dell'app (Assets.xcassets), chiaro e scuro. */
+:root {
+  --canvas: #E8ECEA;
+  --card: #FFFFFF;
+  --hairline: #DDE3E0;
+  --ink: #111614;
+  --ink-2: #5A6661;
+  --action: #F2A33A;
+  --on-action: #111614;
+  --led-ok: #1FAF5A;
+  --led-busy: #F5A524;
+  --ok-text: #157A40;
+  --link: #9A4A12;
+  --code: #EEF2F0;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --canvas: #0C0E0D;
+    --card: #161A18;
+    --hairline: #2C3531;
+    --ink: #E6ECE8;
+    --ink-2: #8B96A0;
+    --action: #FFB020;
+    --led-ok: #3BE37A;
+    --led-busy: #FFB020;
+    --ok-text: #3BE37A;
+    --link: #FFB020;
+    --code: #1F2623;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--ink);
+  font: 17px/1.5 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, "Segoe UI", Roboto, sans-serif;
+}
+a { color: var(--link); text-underline-offset: 2px; }
+code {
+  font: 0.86em ui-monospace, "SF Mono", Menlo, monospace;
+  background: var(--code);
+  padding: 1px 5px;
+  border-radius: 5px;
+  overflow-wrap: anywhere;
+}
+strong { font-weight: 600; }
+
+/* Una lingua alla volta; senza JavaScript si vedono tutte e due. */
+html[data-lang="it"] body [lang="en"],
+html[data-lang="en"] body [lang="it"] { display: none !important; }
+
+.wrap { max-width: 680px; margin-left: auto; margin-right: auto; padding-left: 20px; padding-right: 20px; }
+
+header.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 19px;
+  letter-spacing: -0.01em;
+}
+.mark { display: block; border-radius: 22.4%; flex: none; box-shadow: 0 0 0 1px var(--hairline); }
+.langs {
+  display: flex;
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  padding: 2px;
+}
+.langs a {
+  font: 600 13px/1 ui-monospace, "SF Mono", Menlo, monospace;
+  color: var(--ink-2);
+  text-decoration: none;
+  padding: 7px 11px;
+  border-radius: 999px;
+}
+html[data-lang="it"] .langs [data-set-lang="it"],
+html[data-lang="en"] .langs [data-set-lang="en"] { background: var(--ink); color: var(--canvas); }
+
+main { padding-bottom: 24px; }
+h1 { font-size: 34px; line-height: 1.12; letter-spacing: -0.02em; margin: 18px 0 8px; }
+h2 { font-size: 21px; line-height: 1.25; margin: 36px 0 10px; letter-spacing: -0.01em; }
+p { margin: 0 0 12px; }
+.lede { font-size: 19px; color: var(--ink-2); margin-bottom: 20px; }
+.meta { font-size: 14px; color: var(--ink-2); margin: 0 0 22px; }
+ul { margin: 0 0 12px; padding-left: 20px; }
+li { margin: 6px 0; }
+li::marker { color: var(--ink-2); }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+  padding: 4px 16px;
+  margin: 0 0 16px;
+}
+.card.pad { padding: 16px; }
+
+/* Righe con la lucina, come nell'app (LEDRow). */
+.led-row { display: flex; gap: 14px; padding: 13px 0; }
+.led-row + .led-row { border-top: 1px solid var(--hairline); }
+.led {
+  flex: none;
+  width: 10px;
+  height: 10px;
+  margin-top: 7px;
+  border-radius: 50%;
+  background: var(--led-ok);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--led-ok) 22%, transparent);
+}
+.led.busy {
+  background: var(--led-busy);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--led-busy) 22%, transparent);
+}
+.led-row b { display: block; font-weight: 600; }
+.led-row span { display: block; color: var(--ink-2); font-size: 15px; }
+
+/* Domande frequenti */
+details { border-top: 1px solid var(--hairline); }
+details:first-child { border-top: 0; }
+summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 15px 28px 15px 0;
+  font-weight: 600;
+  position: relative;
+}
+summary::-webkit-details-marker { display: none; }
+summary::after {
+  content: "";
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--ink-2);
+  border-bottom: 2px solid var(--ink-2);
+  transform: translateY(-70%) rotate(45deg);
+  transition: transform 0.15s;
+}
+details[open] summary::after { transform: translateY(-30%) rotate(-135deg); }
+details > div { padding: 0 0 14px; }
+details > div > :last-child { margin-bottom: 0; }
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--action);
+  color: var(--on-action);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 13px 22px;
+  min-height: 48px;
+}
+.contact { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+.contact p { margin: 0; color: var(--ink-2); font-size: 15px; }
+
+/* Pagina iniziale */
+.hero { text-align: center; padding: 28px 0 8px; }
+.hero .mark { margin: 0 auto 18px; box-shadow: 0 0 0 1px var(--hairline), 0 8px 28px rgba(0, 0, 0, 0.18); }
+.hero h1 { margin-top: 0; }
+.hero .lede { margin-left: auto; margin-right: auto; max-width: 30em; }
+.soon {
+  display: inline-block;
+  font: 600 13px/1 ui-monospace, "SF Mono", Menlo, monospace;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  border: 1px solid var(--hairline);
+  background: var(--card);
+  border-radius: 999px;
+  padding: 9px 14px;
+  margin-bottom: 26px;
+}
+.tiles { display: grid; gap: 12px; margin-top: 8px; }
+.tile {
+  display: block;
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+  padding: 14px 16px;
+  color: var(--ink);
+  text-decoration: none;
+}
+.tile b { display: block; font-weight: 600; }
+.tile span { color: var(--ink-2); font-size: 15px; }
+@media (min-width: 560px) { .tiles { grid-template-columns: 1fr 1fr; } }
+
+footer {
+  margin-top: 16px;
+  padding-bottom: 40px;
+  color: var(--ink-2);
+  font-size: 14px;
+  text-align: center;
+}
+footer .rule { border-top: 1px solid var(--hairline); padding-top: 20px; }
+footer nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; margin-bottom: 8px; }
+footer a { color: var(--ink-2); }

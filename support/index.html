@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en" data-title-it="Supporto · Blinken" data-title-en="Support · Blinken">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Support · Blinken</title>
+<meta name="description" content="Help and frequently asked questions about Blinken. Aiuto e domande frequenti su Blinken.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#E8ECEA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0C0E0D" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/style.css">
+<script src="/lang.js"></script>
+</head>
+<body>
+<header class="top wrap">
+  <a class="brand" href="/"><img class="mark" src="/icon.svg" width="32" height="32" alt="">Blinken</a>
+  <nav class="langs" aria-label="Lingua / Language"><a href="#it" data-set-lang="it" hreflang="it">IT</a><a href="#en" data-set-lang="en" hreflang="en">EN</a></nav>
+</header>
+
+<main class="wrap">
+
+<article lang="it">
+  <h1>Supporto</h1>
+  <p class="lede">Hai un problema o una domanda su Blinken? Scrivimi.</p>
+
+  <div class="card pad contact">
+    <a class="button" href="mailto:support@blinken.app?subject=Blinken">Scrivi a support@blinken.app</a>
+    <p>Aiuta indicare il modello di iPhone, la versione di iOS, la versione dell'agente (scheda Agente) e cosa stavi facendo.</p>
+  </div>
+
+  <h2>Domande frequenti</h2>
+  <div class="card">
+    <details>
+      <summary>Cosa serve per usare Blinken?</summary>
+      <div>
+        <ul>
+          <li>Un iPhone con iOS 18 o successivo.</li>
+          <li>Le macchine da aggiornare, con SSH: host Proxmox VE e macchine Linux con Debian, Ubuntu, Raspberry Pi OS e derivate, oppure Fedora, RHEL, Rocky Linux, AlmaLinux e CentOS Stream dalla 9 in poi. Fisiche, VM o container.</li>
+          <li>Sulle macchine Linux un utente con sudo senza password; su Proxmox l'utente root.</li>
+          <li>Una macchina sempre accesa per l'agente: l'app può creare un container Debian su Proxmox, oppure usare una macchina con Debian 12 o successivo, Ubuntu 22.04 o successivo, o un Raspberry Pi.</li>
+          <li>L'iPhone sulla stessa rete dell'agente, o collegato con una VPN.</li>
+        </ul>
+      </div>
+    </details>
+    <details>
+      <summary>Cosa fa l'agente?</summary>
+      <div>
+        <p>È un piccolo servizio (Ansible più un'API HTTPS) che gira su una tua macchina, così gli aggiornamenti continuano anche ad app chiusa.</p>
+        <p>Prima fa una verifica: cosa c'è da aggiornare o da riavviare, senza installare niente. Ti mostra il piano e, quando confermi, aggiorna una macchina alla volta nell'ordine del rack: salta quelle già a posto, riavvia solo quando serve, ferma e rimonta NAS e container intorno ai riavvii e al primo errore si ferma. Se vuoi, fa la verifica da solo nei giorni e all'ora che scegli.</p>
+        <p>Ogni comando eseguito sulle macchine si può rivedere nell'app.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Cosa installa Blinken sulle mie macchine?</summary>
+      <div>
+        <p>La chiave SSH pubblica dell'agente e alcuni script di supporto in <code>/usr/local/sbin</code> e <code>/var/lib/homelab-update</code>. Da <strong>Agente › Elimina agente…</strong> puoi disinstallare l'agente e, se vuoi, togliere chiave e script da tutte le macchine.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Posso provarla senza un homelab?</summary>
+      <div>
+        <p>Sì: nella schermata di benvenuto tocca <strong>Prova prima con un esempio</strong>. È un rack finto: verifica e aggiornamento sono simulati e niente tocca la tua rete. Per uscire: <strong>Agente › Esci dall'esempio</strong>.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Cosa conta per il limite di 5 macchine?</summary>
+      <div>
+        <p>Senza Pro Blinken aggiorna le prime 5 macchine nell'ordine del rack. Contano gli host Proxmox e le macchine Linux, comprese VM e container; la macchina dell'agente e i NAS non contano.</p>
+        <p>Le altre restano nel rack come non collegate: verifica e aggiornamento le saltano. Verifica automatica, cronologia, NAS e cluster ci sono anche senza Pro.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Cos'è Blinken Pro?</summary>
+      <div>
+        <p>Toglie il limite di macchine. È un acquisto una tantum, senza abbonamento: <strong>Agente › Versione › Passa a Pro</strong>. In Famiglia non è disponibile.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Come ripristino l'acquisto su un altro iPhone?</summary>
+      <div>
+        <p>Accedi all'App Store con lo stesso Apple Account e tocca <strong>Agente › Versione › Ripristina acquisti</strong>.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Come chiedo un rimborso?</summary>
+      <div>
+        <p>I rimborsi li gestisce Apple: <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Quali NAS sono supportati?</summary>
+      <div>
+        <p>QNAP, Synology, TrueNAS e altri. Blinken non aggiorna il firmware del NAS: lo smonta dalle macchine, aspetta che tu lo aggiorni dal suo pannello e lo rimonta quando torna online. Con SSH può anche solo riavviarlo.</p>
+      </div>
+    </details>
+    <details>
+      <summary>L'app non si collega all'agente</summary>
+      <div>
+        <ul>
+          <li>Controlla che l'iPhone sia sulla stessa rete dell'agente, o in VPN.</li>
+          <li>In <strong>Impostazioni › Privacy e sicurezza › Rete locale</strong> Blinken deve essere attivo.</li>
+          <li>Riserva l'indirizzo dell'agente nel router (DHCP), così non cambia.</li>
+          <li>Sulla macchina dell'agente: <code>systemctl status homelab-agent</code>.</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</article>
+
+<article lang="en">
+  <h1>Support</h1>
+  <p class="lede">Having a problem or a question about Blinken? Write to me.</p>
+
+  <div class="card pad contact">
+    <a class="button" href="mailto:support@blinken.app?subject=Blinken">Write to support@blinken.app</a>
+    <p>It helps to include your iPhone model, iOS version, agent version (Agent tab) and what you were doing.</p>
+  </div>
+
+  <h2>Frequently asked questions</h2>
+  <div class="card">
+    <details>
+      <summary>What do I need to use Blinken?</summary>
+      <div>
+        <ul>
+          <li>An iPhone with iOS 18 or later.</li>
+          <li>The machines to update, with SSH: Proxmox VE hosts and Linux machines running Debian, Ubuntu, Raspberry Pi OS and derivatives, or Fedora, RHEL, Rocky Linux, AlmaLinux and CentOS Stream 9 or later. Physical, VMs or containers.</li>
+          <li>On Linux machines, a user with passwordless sudo; on Proxmox, the root user.</li>
+          <li>An always-on machine for the agent: the app can create a Debian container on Proxmox, or use a machine with Debian 12 or later, Ubuntu 22.04 or later, or a Raspberry Pi.</li>
+          <li>The iPhone on the same network as the agent, or connected through a VPN.</li>
+        </ul>
+      </div>
+    </details>
+    <details>
+      <summary>What does the agent do?</summary>
+      <div>
+        <p>It's a small service (Ansible plus an HTTPS API) running on one of your machines, so updates keep going even with the app closed.</p>
+        <p>First it runs a check: what needs updating or rebooting, without installing anything. It shows you the plan and, once you confirm, updates one machine at a time in rack order: it skips the ones already up to date, reboots only when needed, stops and remounts NAS shares and containers around reboots, and stops at the first error. If you like, it runs the check by itself on the days and at the time you choose.</p>
+        <p>Every command run on your machines can be reviewed in the app.</p>
+      </div>
+    </details>
+    <details>
+      <summary>What does Blinken install on my machines?</summary>
+      <div>
+        <p>The agent's public SSH key and a few helper scripts in <code>/usr/local/sbin</code> and <code>/var/lib/homelab-update</code>. <strong>Agent › Delete agent…</strong> uninstalls the agent and, if you want, removes the key and scripts from all machines.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Can I try it without a homelab?</summary>
+      <div>
+        <p>Yes: on the welcome screen tap <strong>Try an example first</strong>. It's a pretend rack: check and update are simulated and nothing touches your network. To leave it: <strong>Agent › Exit the example</strong>.</p>
+      </div>
+    </details>
+    <details>
+      <summary>What counts toward the 5-machine limit?</summary>
+      <div>
+        <p>Without Pro, Blinken updates the first 5 machines in rack order. Proxmox hosts and Linux machines count, VMs and containers included; the agent's machine and NAS devices don't.</p>
+        <p>The others stay in the rack as not connected: check and update skip them. Automatic check, history, NAS and clusters work without Pro too.</p>
+      </div>
+    </details>
+    <details>
+      <summary>What is Blinken Pro?</summary>
+      <div>
+        <p>It removes the machine limit. It's a one-time purchase, no subscription: <strong>Agent › Version › Upgrade to Pro</strong>. Family Sharing isn't available.</p>
+      </div>
+    </details>
+    <details>
+      <summary>How do I restore my purchase on another iPhone?</summary>
+      <div>
+        <p>Sign in to the App Store with the same Apple Account and tap <strong>Agent › Version › Restore purchases</strong>.</p>
+      </div>
+    </details>
+    <details>
+      <summary>How do I ask for a refund?</summary>
+      <div>
+        <p>Refunds are handled by Apple: <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Which NAS devices are supported?</summary>
+      <div>
+        <p>QNAP, Synology, TrueNAS and others. Blinken doesn't update the NAS firmware: it unmounts the NAS from your machines, waits while you update it from its own panel and remounts it when it's back online. With SSH it can also just reboot it.</p>
+      </div>
+    </details>
+    <details>
+      <summary>The app can't reach the agent</summary>
+      <div>
+        <ul>
+          <li>Check that the iPhone is on the same network as the agent, or on a VPN.</li>
+          <li>In <strong>Settings › Privacy &amp; Security › Local Network</strong>, Blinken must be on.</li>
+          <li>Reserve the agent's address in your router (DHCP) so it doesn't change.</li>
+          <li>On the agent's machine: <code>systemctl status homelab-agent</code>.</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</article>
+
+</main>
+
+<footer class="wrap"><div class="rule">
+  <nav>
+    <a href="/support/"><span lang="it">Supporto</span><span lang="en">Support</span></a>
+    <a href="/privacy/">Privacy</a>
+    <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"><span lang="it">Termini d'uso (EULA di Apple)</span><span lang="en">Terms of use (Apple EULA)</span></a>
+  </nav>
+  <div>© 2026 Blinken · <a href="mailto:support@blinken.app">support@blinken.app</a></div>
+</div></footer>
+</body>
+</html>

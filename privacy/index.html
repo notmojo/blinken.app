@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en" data-title-it="Privacy · Blinken" data-title-en="Privacy · Blinken">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacy · Blinken</title>
+<meta name="description" content="Blinken doesn't collect any data. Blinken non raccoglie nessun dato.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#E8ECEA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0C0E0D" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/style.css">
+<script src="/lang.js"></script>
+</head>
+<body>
+<header class="top wrap">
+  <a class="brand" href="/"><img class="mark" src="/icon.svg" width="32" height="32" alt="">Blinken</a>
+  <nav class="langs" aria-label="Lingua / Language"><a href="#it" data-set-lang="it" hreflang="it">IT</a><a href="#en" data-set-lang="en" hreflang="en">EN</a></nav>
+</header>
+
+<main class="wrap">
+
+<article lang="it">
+  <h1>Privacy</h1>
+  <p class="meta">Blinken: Homelab Updates · ultimo aggiornamento 9 ottobre 2026</p>
+
+  <div class="card">
+    <div class="led-row"><i class="led"></i><div><b>Nessun dato raccolto</b><span>Lo sviluppatore non riceve niente su di te, sulle tue macchine o su come usi l'app.</span></div></div>
+    <div class="led-row"><i class="led"></i><div><b>Niente account, pubblicità o statistiche</b><span>Nell'app non ci sono strumenti di analisi o di tracciamento, né di terze parti.</span></div></div>
+    <div class="led-row"><i class="led"></i><div><b>Tutto resta sulla tua rete</b><span>L'app parla solo con il tuo agente e con le tue macchine.</span></div></div>
+  </div>
+
+  <h2>Con chi parla l'app</h2>
+  <ul>
+    <li><strong>Il tuo agente</strong>: il servizio di Blinken che installi su una tua macchina. L'app lo contatta in HTTPS, con un token e controllando l'impronta del suo certificato.</li>
+    <li><strong>Le tue macchine, via SSH</strong>, solo per installare l'agente: crea il container su Proxmox o copia l'agente sulla macchina che scegli.</li>
+    <li><strong>La tua rete locale</strong>: durante la configurazione, per trovare i Proxmox, l'app prova la porta 8006 degli indirizzi della rete Wi-Fi dell'iPhone. Per questo iOS chiede il permesso di accedere alla rete locale.</li>
+    <li><strong>Apple</strong>, per l'acquisto di Blinken Pro.</li>
+  </ul>
+  <p>Nessun altro: Blinken non ha un server suo e non manda niente allo sviluppatore.</p>
+  <p>Solo se l'hai permesso in <strong>Impostazioni › Privacy e sicurezza › Analisi e miglioramenti</strong>, Apple può condividere con lo sviluppatore statistiche anonime e rapporti sugli arresti anomali, come per ogni app.</p>
+
+  <h2>Le password</h2>
+  <p>Le password che inserisci, per installare l'agente o autorizzare una macchina, servono solo in quel momento e non vengono salvate, né sull'iPhone né sull'agente. Per autorizzare una macchina l'agente vi copia la sua chiave SSH pubblica e da lì in poi usa quella. Nei comandi che l'app mostra le password non compaiono mai.</p>
+
+  <h2>Cosa resta sull'iPhone</h2>
+  <ul>
+    <li>indirizzo, porta e impronta del certificato dell'agente, nelle impostazioni dell'app;</li>
+    <li>il token dell'agente, nel Portachiavi, solo su questo dispositivo;</li>
+    <li>le chiavi SSH delle macchine su cui hai installato l'agente, per accorgersi se cambiano.</li>
+  </ul>
+  <p><strong>Agente › Scollega agente</strong> cancella il collegamento dall'iPhone.</p>
+
+  <h2>Cosa resta sull'agente</h2>
+  <p>L'agente gira su una tua macchina e i suoi dati restano lì: l'elenco delle macchine (nomi, indirizzi e utenti SSH), la sua chiave SSH, il calendario della verifica automatica e la cronologia di verifiche e aggiornamenti con i comandi eseguiti. Le voci della cronologia si eliminano dall'app; <strong>Agente › Elimina agente…</strong> disinstalla l'agente e, se vuoi, toglie la sua chiave dalle macchine.</p>
+  <p>Per installarsi l'agente scarica i pacchetti della sua distribuzione e Ansible da PyPI; durante gli aggiornamenti le tue macchine scaricano i pacchetti dai loro repository abituali. Allo sviluppatore non arriva niente.</p>
+
+  <h2>Acquisti</h2>
+  <p>Blinken Pro si compra sull'App Store: pagamento e ricevute li gestisce Apple, secondo la sua <a href="https://www.apple.com/it/legal/privacy/">informativa sulla privacy</a>. L'app chiede ad Apple solo se hai già Blinken Pro; lo sviluppatore non vede i tuoi dati di pagamento.</p>
+
+  <h2>L'esempio</h2>
+  <p><strong>Prova prima con un esempio</strong> apre un rack finto che gira tutto dentro l'app, senza rete.</p>
+
+  <h2>Se scrivi al supporto</h2>
+  <p>Se scrivi a <a href="mailto:support@blinken.app">support@blinken.app</a>, il tuo indirizzo email e quello che mandi servono solo per risponderti: non vengono dati a nessuno e vengono cancellati quando non servono più.</p>
+
+  <h2>Modifiche</h2>
+  <p>Se questa informativa cambia, la nuova versione compare su questa pagina con la sua data.</p>
+
+  <h2>Contatti</h2>
+  <p>Blinken è sviluppata da Matteo. Per domande sulla privacy: <a href="mailto:support@blinken.app">support@blinken.app</a>.</p>
+</article>
+
+<article lang="en">
+  <h1>Privacy</h1>
+  <p class="meta">Blinken: Homelab Updates · last updated 9 October 2026</p>
+
+  <div class="card">
+    <div class="led-row"><i class="led"></i><div><b>No data collected</b><span>The developer receives nothing about you, your machines or how you use the app.</span></div></div>
+    <div class="led-row"><i class="led"></i><div><b>No accounts, ads or analytics</b><span>The app has no analytics or tracking tools, its own or third-party.</span></div></div>
+    <div class="led-row"><i class="led"></i><div><b>Everything stays on your network</b><span>The app only talks to your agent and your machines.</span></div></div>
+  </div>
+
+  <h2>Who the app talks to</h2>
+  <ul>
+    <li><strong>Your agent</strong>: the Blinken service you install on one of your machines. The app reaches it over HTTPS, with a token, and checks its certificate's fingerprint.</li>
+    <li><strong>Your machines, over SSH</strong>, only to install the agent: it creates the container on Proxmox or copies the agent to the machine you pick.</li>
+    <li><strong>Your local network</strong>: during setup, to find Proxmox hosts, the app tries port 8006 on the addresses of the iPhone's Wi-Fi network. That's why iOS asks for local network access.</li>
+    <li><strong>Apple</strong>, to buy Blinken Pro.</li>
+  </ul>
+  <p>No one else: Blinken has no server of its own and sends nothing to the developer.</p>
+  <p>Only if you allowed it in <strong>Settings › Privacy &amp; Security › Analytics &amp; Improvements</strong>, Apple may share anonymous statistics and crash reports with the developer, as for any app.</p>
+
+  <h2>Passwords</h2>
+  <p>The passwords you enter, to install the agent or authorize a machine, are used only at that moment and are never saved, on the iPhone or on the agent. To authorize a machine the agent copies its public SSH key to it and uses that from then on. Passwords never appear in the commands the app shows.</p>
+
+  <h2>What stays on the iPhone</h2>
+  <ul>
+    <li>the agent's address, port and certificate fingerprint, in the app's settings;</li>
+    <li>the agent's token, in the Keychain, on this device only;</li>
+    <li>the SSH keys of the machines you installed the agent on, to notice if they change.</li>
+  </ul>
+  <p><strong>Agent › Disconnect agent</strong> removes the connection from the iPhone.</p>
+
+  <h2>What stays on the agent</h2>
+  <p>The agent runs on your machine and its data stays there: the list of machines (names, addresses and SSH users), its SSH key, the automatic check schedule and the history of checks and updates with the commands they ran. History entries can be deleted from the app; <strong>Agent › Delete agent…</strong> uninstalls the agent and, if you want, removes its key from your machines.</p>
+  <p>To install itself the agent downloads its distribution's packages and Ansible from PyPI; during updates your machines download packages from their usual repositories. Nothing reaches the developer.</p>
+
+  <h2>Purchases</h2>
+  <p>Blinken Pro is bought on the App Store: Apple handles payment and receipts, under its <a href="https://www.apple.com/legal/privacy/">privacy policy</a>. The app only asks Apple whether you already own Blinken Pro; the developer never sees your payment details.</p>
+
+  <h2>The example</h2>
+  <p><strong>Try an example first</strong> opens a pretend rack that runs entirely inside the app, with no network.</p>
+
+  <h2>If you write to support</h2>
+  <p>If you write to <a href="mailto:support@blinken.app">support@blinken.app</a>, your email address and what you send are used only to reply to you: they are not shared with anyone and are deleted once no longer needed.</p>
+
+  <h2>Changes</h2>
+  <p>If this policy changes, the new version appears on this page with its date.</p>
+
+  <h2>Contact</h2>
+  <p>Blinken is developed by Matteo. Privacy questions: <a href="mailto:support@blinken.app">support@blinken.app</a>.</p>
+</article>
+
+</main>
+
+<footer class="wrap"><div class="rule">
+  <nav>
+    <a href="/support/"><span lang="it">Supporto</span><span lang="en">Support</span></a>
+    <a href="/privacy/">Privacy</a>
+    <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"><span lang="it">Termini d'uso (EULA di Apple)</span><span lang="en">Terms of use (Apple EULA)</span></a>
+  </nav>
+  <div>© 2026 Blinken · <a href="mailto:support@blinken.app">support@blinken.app</a></div>
+</div></footer>
+</body>
+</html>
