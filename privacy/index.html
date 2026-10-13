@@ -23,7 +23,7 @@
 
 <article lang="it">
   <h1>Privacy</h1>
-  <p class="meta">Blinken: Homelab Updates · ultimo aggiornamento 9 ottobre 2026</p>
+  <p class="meta">Blinken: Homelab Updates · ultimo aggiornamento 12 ottobre 2026</p>
 
   <div class="card">
     <div class="led-row"><i class="led"></i><div><b>Nessun dato raccolto</b><span>Lo sviluppatore non riceve niente su di te, sulle tue macchine o su come usi l'app.</span></div></div>
@@ -34,6 +34,7 @@
   <h2>Con chi parla l'app</h2>
   <ul>
     <li><strong>Il tuo agente</strong>: il servizio di Blinken che installi su una tua macchina. L'app lo contatta in HTTPS, con un token e controllando l'impronta del suo certificato.</li>
+    <li><strong>Il terminale</strong>, se lo accendi in <strong>Agente › Terminale</strong>: l'app apre la sessione verso l'agente, nella stessa connessione HTTPS, ed è l'agente a collegarsi in SSH alla macchina. Comandi e risposte passano solo tra app, agente e macchina e non vengono salvati; nel registro dell'agente restano solo l'apertura e la chiusura della sessione.</li>
     <li><strong>Le tue macchine, via SSH</strong>, solo per installare l'agente: crea il container su Proxmox o copia l'agente sulla macchina che scegli.</li>
     <li><strong>La tua rete locale</strong>: durante la configurazione, per trovare i Proxmox, l'app prova la porta 8006 degli indirizzi della rete Wi-Fi dell'iPhone. Per questo iOS chiede il permesso di accedere alla rete locale.</li>
     <li><strong>Apple</strong>, per l'acquisto di Blinken Pro.</li>
@@ -60,7 +61,7 @@
   <p>Blinken Pro si compra sull'App Store: pagamento e ricevute li gestisce Apple, secondo la sua <a href="https://www.apple.com/it/legal/privacy/">informativa sulla privacy</a>. L'app chiede ad Apple solo se hai già Blinken Pro; lo sviluppatore non vede i tuoi dati di pagamento.</p>
 
   <h2>L'esempio</h2>
-  <p><strong>Prova prima con un esempio</strong> apre un rack finto che gira tutto dentro l'app, senza rete.</p>
+  <p><strong>Prova prima con un esempio</strong> apre un rack finto, terminale compreso, che gira tutto dentro l'app, senza rete.</p>
 
   <h2>Se scrivi al supporto</h2>
   <p>Se scrivi a <a href="mailto:support@blinken.app">support@blinken.app</a>, il tuo indirizzo email e quello che mandi servono solo per risponderti: non vengono dati a nessuno e vengono cancellati quando non servono più.</p>
@@ -74,7 +75,7 @@
 
 <article lang="en">
   <h1>Privacy</h1>
-  <p class="meta">Blinken: Homelab Updates · last updated 9 October 2026</p>
+  <p class="meta">Blinken: Homelab Updates · last updated 12 October 2026</p>
 
   <div class="card">
     <div class="led-row"><i class="led"></i><div><b>No data collected</b><span>The developer receives nothing about you, your machines or how you use the app.</span></div></div>
@@ -85,6 +86,7 @@
   <h2>Who the app talks to</h2>
   <ul>
     <li><strong>Your agent</strong>: the Blinken service you install on one of your machines. The app reaches it over HTTPS, with a token, and checks its certificate's fingerprint.</li>
+    <li><strong>The terminal</strong>, if you turn it on in <strong>Agent › Terminal</strong>: the app opens the session to the agent, over the same HTTPS connection, and the agent connects to the machine over SSH. Commands and output only travel between app, agent and machine and are not saved; the agent's log keeps only when a session opened and closed.</li>
     <li><strong>Your machines, over SSH</strong>, only to install the agent: it creates the container on Proxmox or copies the agent to the machine you pick.</li>
     <li><strong>Your local network</strong>: during setup, to find Proxmox hosts, the app tries port 8006 on the addresses of the iPhone's Wi-Fi network. That's why iOS asks for local network access.</li>
     <li><strong>Apple</strong>, to buy Blinken Pro.</li>
@@ -111,7 +113,7 @@
   <p>Blinken Pro is bought on the App Store: Apple handles payment and receipts, under its <a href="https://www.apple.com/legal/privacy/">privacy policy</a>. The app only asks Apple whether you already own Blinken Pro; the developer never sees your payment details.</p>
 
   <h2>The example</h2>
-  <p><strong>Try an example first</strong> opens a pretend rack that runs entirely inside the app, with no network.</p>
+  <p><strong>Try an example first</strong> opens a pretend rack, terminal included, that runs entirely inside the app, with no network.</p>
 
   <h2>If you write to support</h2>
   <p>If you write to <a href="mailto:support@blinken.app">support@blinken.app</a>, your email address and what you send are used only to reply to you: they are not shared with anyone and are deleted once no longer needed.</p>

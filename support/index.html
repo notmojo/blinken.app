@@ -59,16 +59,24 @@
       </div>
     </details>
     <details>
+      <summary>Come funziona il terminale?</summary>
+      <div>
+        <p>Accanto a ogni macchina del Rack c'è un tasto con l'icona del terminale: apre una shell SSH vera sulla macchina, attraverso l'agente. Al posto della tastiera c'è un pannello di comandi comuni (stato, servizi, log, Docker, Proxmox, pacchetti, rete); gli argomenti si scelgono da una lista letta sulla macchina. Prima di un comando che modifica qualcosa vedi la riga esatta e confermi; la tastiera resta a un tocco.</p>
+        <p>Se un aggiornamento si ferma per un errore, dal dettaglio di quel passo <strong>Apri terminale</strong> propone i comandi per capire cosa non va.</p>
+        <p>Il terminale è gratis per tutti. Sull'agente va acceso in <strong>Agente › Terminale</strong> (serve l'agente 1.24 o successivo): quando è acceso, chi ha la chiave dell'app può eseguire qualsiasi comando sulle macchine.</p>
+      </div>
+    </details>
+    <details>
       <summary>Posso provarla senza un homelab?</summary>
       <div>
-        <p>Sì: nella schermata di benvenuto tocca <strong>Prova prima con un esempio</strong>. È un rack finto: verifica e aggiornamento sono simulati e niente tocca la tua rete. Per uscire: <strong>Agente › Esci dall'esempio</strong>.</p>
+        <p>Sì: nella schermata di benvenuto tocca <strong>Prova prima con un esempio</strong>. È un rack finto: verifica, aggiornamento e terminale sono simulati e niente tocca la tua rete. Per uscire: <strong>Agente › Esci dall'esempio</strong>.</p>
       </div>
     </details>
     <details>
       <summary>Cosa conta per il limite di 5 macchine?</summary>
       <div>
         <p>Senza Pro Blinken aggiorna le prime 5 macchine nell'ordine del rack. Contano gli host Proxmox e le macchine Linux, comprese VM e container; la macchina dell'agente e i NAS non contano.</p>
-        <p>Le altre restano nel rack come non collegate: verifica e aggiornamento le saltano. Verifica automatica, cronologia, NAS e cluster ci sono anche senza Pro.</p>
+        <p>Le altre restano nel rack come non collegate: verifica e aggiornamento le saltano. Verifica automatica, cronologia, terminale, NAS e cluster ci sono anche senza Pro.</p>
       </div>
     </details>
     <details>
@@ -147,16 +155,24 @@
       </div>
     </details>
     <details>
+      <summary>How does the terminal work?</summary>
+      <div>
+        <p>Next to every machine in the Rack there's a button with the terminal icon: it opens a real SSH shell on the machine, through the agent. Instead of the keyboard there's a panel of common commands (status, services, logs, Docker, Proxmox, packages, network); arguments are picked from a list read on the machine. Before a command that changes something you see the exact line and confirm it; the keyboard is one tap away.</p>
+        <p>If an update stops on an error, <strong>Open terminal</strong> in that step's details suggests the commands to find out what's wrong.</p>
+        <p>The terminal is free for everyone. Turn it on in <strong>Agent › Terminal</strong> (it needs agent 1.24 or later): while it's on, whoever has the app's key can run any command on the machines.</p>
+      </div>
+    </details>
+    <details>
       <summary>Can I try it without a homelab?</summary>
       <div>
-        <p>Yes: on the welcome screen tap <strong>Try an example first</strong>. It's a pretend rack: check and update are simulated and nothing touches your network. To leave it: <strong>Agent › Exit the example</strong>.</p>
+        <p>Yes: on the welcome screen tap <strong>Try an example first</strong>. It's a pretend rack: check, update and terminal are simulated and nothing touches your network. To leave it: <strong>Agent › Exit the example</strong>.</p>
       </div>
     </details>
     <details>
       <summary>What counts toward the 5-machine limit?</summary>
       <div>
         <p>Without Pro, Blinken updates the first 5 machines in rack order. Proxmox hosts and Linux machines count, VMs and containers included; the agent's machine and NAS devices don't.</p>
-        <p>The others stay in the rack as not connected: check and update skip them. Automatic check, history, NAS and clusters work without Pro too.</p>
+        <p>The others stay in the rack as not connected: check and update skip them. Automatic check, history, terminal, NAS and clusters work without Pro too.</p>
       </div>
     </details>
     <details>
