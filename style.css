@@ -176,18 +176,7 @@ details > div > :last-child { margin-bottom: 0; }
 .hero .mark { margin: 0 auto 18px; box-shadow: 0 0 0 1px var(--hairline), 0 8px 28px rgba(0, 0, 0, 0.18); }
 .hero h1 { margin-top: 0; }
 .hero .lede { margin-left: auto; margin-right: auto; max-width: 30em; }
-.soon {
-  display: inline-block;
-  font: 600 13px/1 ui-monospace, "SF Mono", Menlo, monospace;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--ink-2);
-  border: 1px solid var(--hairline);
-  background: var(--card);
-  border-radius: 999px;
-  padding: 9px 14px;
-  margin-bottom: 26px;
-}
+.hero .button { margin-bottom: 26px; }
 .tiles { display: grid; gap: 12px; margin-top: 8px; }
 .tile {
   display: block;
